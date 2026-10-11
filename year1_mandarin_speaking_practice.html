@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 1 Mandarin Speaking Practice</title>
+<style>
+:root{--ink:#18324a;--muted:#65758b;--mint:#d9f4e8;--peach:#ffe1d7;--cream:#fff9e9;--blue:#e4efff;--accent:#4c8f83;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans SC",sans-serif;background:linear-gradient(135deg,#f7fbff,#fff5ee);color:var(--ink);min-height:100vh}
+header{padding:24px 18px 18px;text-align:center;background:#d9f4e8;border-bottom:4px solid #b8e7d4}
+.kicker{font-size:.8rem;font-weight:800;letter-spacing:.12em;color:#39796d;text-transform:uppercase}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);margin:8px 0}header p{margin:5px auto;max-width:720px;line-height:1.5}
+main{max-width:1050px;margin:0 auto;padding:22px 16px 40px}
+.instructions{background:#fff;border:1px solid #dce8e8;border-radius:16px;padding:14px 18px;margin-bottom:18px;line-height:1.65}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.tab{border:0;border-radius:999px;padding:13px 24px;font-weight:800;font-size:1rem;background:#e7edf5;color:var(--ink);cursor:pointer}
+.tab.active{background:var(--ink);color:white}.panel{display:none}.panel.active{display:block}
+.section-head{text-align:center;margin:16px 0}.section-head h2{margin:0 0 6px;font-size:1.55rem}.section-head p{color:var(--muted);margin:0}
+.toolbar{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}
+button{font:inherit;cursor:pointer}.toolbtn,.navbtn{border:0;border-radius:12px;padding:11px 16px;background:var(--ink);color:white;font-weight:700}.toolbtn.light,.navbtn.light{background:white;color:var(--ink);border:1px solid #d8e2ed}
+.counter{font-weight:800;color:var(--muted);min-width:95px;text-align:center}
+.card-wrap{display:flex;justify-content:center;align-items:center;min-height:360px}
+.flashcard{width:min(100%,600px);min-height:340px;border-radius:28px;background:white;box-shadow:0 14px 40px #19334a18;border:3px solid #d6eee4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;position:relative;transition:transform .15s}
+.flashcard:active{transform:scale(.99)}.card-label{position:absolute;top:16px;left:18px;font-size:.76rem;font-weight:800;letter-spacing:.08em;color:#4c8f83;text-transform:uppercase}
+.pinyin{font-size:clamp(1.2rem,3vw,1.65rem);color:#4c8f83;font-weight:700;margin:22px 0 8px}
+.hanzi{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;font-size:clamp(4rem,13vw,6.4rem);line-height:1.2;font-weight:800;margin:0 0 14px;letter-spacing:.03em}
+.meaning{font-size:clamp(1.15rem,3vw,1.5rem);color:#53647a;font-weight:600}.tap-hint{font-size:.9rem;color:#8793a3;margin-top:24px}
+.speak{margin-top:20px;border:0;border-radius:999px;background:#4c8f83;color:#fff;padding:13px 22px;font-weight:800;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-top:22px}
+.mini{border:1px solid #dbe8e7;background:white;border-radius:15px;padding:13px;text-align:center;cursor:pointer;min-height:105px}
+.mini .mini-hanzi{font-size:2rem;font-weight:800}.mini .mini-pinyin{color:#4c8f83;font-size:.85rem;margin:3px}.mini:hover,.mini:focus{outline:3px solid #b8e7d4}
+.sentence-card{background:#fff;border:3px solid #d8e9fb}.sentence-card .card-label{color:#557ab2}.sentence-card .pinyin{color:#557ab2}.sentence-card .speak{background:#557ab2}.sentence-chinese{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;font-size:clamp(1.8rem,5vw,3rem);line-height:1.5;font-weight:800;margin:14px 0;max-width:100%}
+.sentence-english{font-size:clamp(1.05rem,3vw,1.35rem);line-height:1.5;color:#53647a;max-width:540px}.sentence-group{width:min(100%,720px);display:grid;gap:14px}.sentence-line{padding:18px;border-radius:20px;background:#f4f8ff}
+.sentence-line .pinyin{margin:0 0 5px;font-size:1.08rem}.sentence-line .sentence-chinese{margin:0;font-size:clamp(1.6rem,4vw,2.5rem)}
+.footer-note{text-align:center;color:#748298;font-size:.86rem;margin-top:20px;line-height:1.6}
+@media(max-width:520px){main{padding:16px 12px 28px}.flashcard{min-height:315px}.card-wrap{min-height:325px}.toolbar{gap:8px}.toolbtn,.navbtn{padding:10px 13px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="kicker">Year 1 · Mandarin</div>
+ <h1>Speaking Practice 口语复习</h1>
+ <p>Listen, look, and say it aloud!<br>听一听、看一看，再大声读出来！</p>
+</header>
+<main>
+ <div class="instructions">
+  <strong>How to use 使用方法</strong><br>
+  <span>1. Choose <b>Vocab 生词</b> or <b>Sentences 句子</b>.</span><br>
+  <span>2. Tap a card or the 🔊 button to hear the Mandarin pronunciation.</span><br>
+  <span>3. Say it aloud, then use the arrows to continue.</span><br>
+  <span>选择生词或句子，点击字卡听读音，然后跟着大声读。按左右箭头继续复习。</span>
+ </div>
+ <div class="tabs" role="tablist">
+  <button class="tab active" id="vocabTab" role="tab" aria-selected="true" onclick="showPanel('vocab')">📚 Vocab 生词</button>
+  <button class="tab" id="sentTab" role="tab" aria-selected="false" onclick="showPanel('sentences')">💬 Sentences 句子</button>
+ </div>
+ <section class="panel active" id="vocabPanel">
+  <div class="section-head"><h2>Vocab 生词</h2><p>Tap a card to hear the word. 点击字卡，听一听生词。</p></div>
+  <div class="toolbar">
+   <button class="toolbtn light" onclick="shuffleVocab()">🔀 Shuffle 随机</button>
+   <button class="toolbtn light" onclick="speakCurrentVocab()">🔊 Listen 听读音</button>
+  </div>
+  <div class="card-wrap">
+   <div class="flashcard" onclick="speakCurrentVocab()" role="button" tabindex="0" aria-label="Play vocabulary pronunciation">
+    <div class="card-label">Word 生词</div><div class="pinyin" id="vPinyin">lǐ</div><div class="hanzi" id="vHanzi">里</div><div class="meaning" id="vMeaning">In / Inside</div><div class="tap-hint">Tap to listen 点击听读音</div>
+   </div>
+  </div>
+  <div class="toolbar">
+   <button class="navbtn light" onclick="moveVocab(-1)">← Previous 上一个</button><div class="counter" id="vCounter">1 / 29</div><button class="navbtn" onclick="moveVocab(1)">Next 下一个 →</button>
+  </div>
+  <div class="grid" id="vocabGrid" aria-label="All vocabulary cards"></div>
+ </section>
+ <section class="panel" id="sentencesPanel">
+  <div class="section-head"><h2>Sentences 句子</h2><p>One slide at a time. 一张字卡一句句子。</p></div>
+  <div class="toolbar"><button class="toolbtn light" onclick="speakCurrentSentence()">🔊 Listen 听读音</button></div>
+  <div class="card-wrap">
+   <div class="flashcard sentence-card" onclick="speakCurrentSentence()" role="button" tabindex="0" aria-label="Play sentence pronunciation">
+    <div class="card-label">Speaking sentence 口语句子</div>
+    <div class="sentence-group" id="sentenceContent"></div>
+    <button class="speak" onclick="event.stopPropagation();speakCurrentSentence()">🔊 Listen 听一听</button>
+    <div class="tap-hint">Tap the card to listen 点击字卡听读音</div>
+   </div>
+  </div>
+  <div class="toolbar"><button class="navbtn light" onclick="moveSentence(-1)">← Previous 上一张</button><div class="counter" id="sCounter">1 / 8</div><button class="navbtn" onclick="moveSentence(1)">Next 下一张 →</button></div>
+  <div class="footer-note">For “我叫……”, say your own name. “我叫……”请说出自己的名字。</div>
+ </section>
+ <div class="footer-note">Made for Year 1 Mandarin speaking revision · 一年级华文口语复习<br>Pronunciation uses the Chinese voice available in your browser/device. 读音由浏览器或设备提供的中文语音播放。</div>
+</main>
+<script>
+const vocab=[
+["lǐ","里","In / Inside"],["yú","鱼","Fish"],["shuǐ","水","Water"],["māo","猫","Cat"],["yóu","游","Swim"],["kuài","快","Fast"],["màn","慢","Slow"],["guò","过","Pass"],["qù","去","Go"],
+["hěn","很","Very"],["yào","要","Want"],["huì","会","Know / Able"],["chū","出","Out"],["qǐng","请","Please"],["zhuō","抓","Catch"],["wán","玩","Play"],["ma","吗","Question word"],["tī","踢","Kick"],["gěi","给","Give"],["pá","爬","Climb"],["bǎ","把","To / Handle"],["xiè","谢","Thank You"],["jiù","就","Then"],["fēi","飞","Fly"],["dào","到","Reach / Go to"],["shù","树","Tree"],["jiā","家","Home / House"],["zhù","住","Stay / Live"],["mén","门","Door"],["hòu","后","Behind / After"],["qián","前","Front"],["niǎo","鸟","Bird"],["dōu","都","Both / All"],["miàn","面","Face / Noodle"],["hé","河","River"],["kāi xīn","开心","Happy"],["duō","多","More"]
+];
+const sentences=[
+[{p:"qǐng wèn nǐ jiào shén me míng zì",c:"请问你叫什么名字？",e:"What is your name?"},{p:"wǒ jiào ______。",c:"我叫_______。",e:"My name is (your name)."}],
+[{p:"qǐng wèn zhè shì shén me",c:"请问这是什么？",e:"Excuse me, what is this?"},{p:"zhè shì huā",c:"这是花。",e:"This is a flower."}],
+[{p:"qǐng wèn zhè shì shuí",c:"请问这是谁？",e:"Excuse me, who is this?"},{p:"zhè shì wǒ de _______",c:"这是我的_______。",e:"This is my ( )."}],
+[{p:"nǐ zài huà shén me",c:"你在画什么？",e:"What are you drawing?"},{p:"wǒ zài huà huār",c:"我在画花儿。",e:"I am drawing a flower."}],
+[{p:"xiǎo yú zài nǎ lǐ",c:"小鱼在哪里？",e:"Where is the little fish?"},{p:"xiǎo yú zài shuǐ lǐ",c:"小鱼在水里。",e:"The little fish is in the water."}],
+[{p:"qiú fēi dào nǎlǐ qù le?",c:"球飞到哪里去了？",e:"Where did the ball go?"},{p:"qiú fēi dào shù shàng qù le",c:"球飞到树上去了。",e:"The ball flew up into the tree."}],
+[{p:"xiǎo yú zhù zài xiǎohé lǐ",c:"小鱼住在小河里。",e:"Little fish live in the river."},{p:"xiǎohé jiùshì xiǎoyú de jiā",c:"小河就是小鱼的家。",e:"The river is the little fish's home."}]
+];
+let vi=0,si=0,order=vocab.map((_,i)=>i);
+function showPanel(which){document.getElementById('vocabPanel').classList.toggle('active',which==='vocab');document.getElementById('sentencesPanel').classList.toggle('active',which==='sentences');document.getElementById('vocabTab').classList.toggle('active',which==='vocab');document.getElementById('sentTab').classList.toggle('active',which==='sentences');document.getElementById('vocabTab').setAttribute('aria-selected',which==='vocab');document.getElementById('sentTab').setAttribute('aria-selected',which==='sentences');}
+function renderVocab(){const [p,c,e]=vocab[order[vi]];document.getElementById('vPinyin').textContent=p;document.getElementById('vHanzi').textContent=c;document.getElementById('vMeaning').textContent=e;document.getElementById('vCounter').textContent=(vi+1)+' / '+order.length;document.querySelectorAll('.mini').forEach((el,i)=>el.classList.toggle('selected',i===vi));}
+function moveVocab(n){vi=(vi+n+order.length)%order.length;renderVocab();}
+function speak(text){if(!('speechSynthesis'in window)){alert('Speech playback is not supported in this browser. 此浏览器不支持语音播放。');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';u.rate=.78;const voices=speechSynthesis.getVoices();const zh=voices.find(v=>v.lang&&v.lang.toLowerCase().startsWith('zh'));if(zh)u.voice=zh;speechSynthesis.speak(u);}
+function speakCurrentVocab(){speak(vocab[order[vi]][1]);}
+function shuffleVocab(){for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}vi=0;renderVocab();}
+function renderGrid(){const grid=document.getElementById('vocabGrid');grid.innerHTML='';vocab.forEach((v,i)=>{const b=document.createElement('button');b.className='mini';b.innerHTML='<div class="mini-pinyin"></div><div class="mini-hanzi"></div><div></div>';b.querySelector('.mini-pinyin').textContent=v[0];b.querySelector('.mini-hanzi').textContent=v[1];b.lastElementChild.textContent=v[2];b.onclick=()=>{order=vocab.map((_,j)=>j);vi=i;renderVocab();window.scrollTo({top:250,behavior:'smooth'});speak(v[1]);};grid.appendChild(b);});}
+function renderSentence(){const s=sentences[si];document.getElementById('sentenceContent').innerHTML=s.map(x=>'<div class="sentence-line"><div class="pinyin"></div><div class="sentence-chinese"></div><div class="sentence-english"></div></div>').join('');[...document.querySelectorAll('.sentence-line')].forEach((el,i)=>{el.querySelector('.pinyin').textContent=s[i].p;el.querySelector('.sentence-chinese').textContent=s[i].c;el.querySelector('.sentence-english').textContent=s[i].e;});document.getElementById('sCounter').textContent=(si+1)+' / '+sentences.length;}
+function moveSentence(n){si=(si+n+sentences.length)%sentences.length;renderSentence();}
+function speakCurrentSentence(){speak(sentences[si].map(x=>x.c.replace(/[_＿]+/g,'')).join('。'));}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){if(document.getElementById('vocabPanel').classList.contains('active'))moveVocab(1);else moveSentence(1)}if(e.key==='ArrowLeft'){if(document.getElementById('vocabPanel').classList.contains('active'))moveVocab(-1);else moveSentence(-1)}});
+renderVocab();renderGrid();renderSentence();
+</script>
+</body>
+</html>
